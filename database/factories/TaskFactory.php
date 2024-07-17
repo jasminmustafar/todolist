@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Ramsey\Uuid\Uuid;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,7 +19,7 @@ class TaskFactory extends Factory
     {
         return [
             'uuid'=>Uuid::uuid4(),
-            'user_id'=>rand(1,59),
+            'user_id'=>rand(1,50),
             'title'=>fake()->sentence,
             'description'=>fake()->paragraph,
             'due_date'=>fake()->date(),

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -23,8 +24,12 @@ Route::get('/mylaravel/{mins?}', function ($mins='mins') {
 Route::get('/aboutus/{namakementerian}', function ($namakementerian) {
     return view('aboutus',compact('namakementerian'));
 });
+Route::get('/users',[UserController::class,'index']);
+Route::get('/users/{id}/edit',[UserController::class,'edit']);
+Route::get('/tasks',[TaskController::class,'index']);
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/users',[UserController::class,'index']);
+

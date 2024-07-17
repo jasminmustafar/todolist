@@ -33,22 +33,22 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
+    
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    /**
-     * Get all of the tasks for the User
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
+
     public function tasks()
     {
         return $this->hasMany(tasks::class, 'user_id', 'id');
 
     }
+
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'user_id', 'id');
+    }
+
+
 }

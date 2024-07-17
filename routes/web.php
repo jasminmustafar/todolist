@@ -27,6 +27,7 @@ Route::get('/aboutus/{namakementerian}', function ($namakementerian) {
 Route::get('/users',[UserController::class,'index']);
 Route::get('/users/{id}/edit',[UserController::class,'edit']);
 Route::get('/tasks',[TaskController::class,'index']);
+Route::get('tasks/{task}',[TaskController::class,'show'])->name('tasks.show');
 
 
 Auth::routes();

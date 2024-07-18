@@ -18,4 +18,18 @@ class Comment extends Model
 
     protected $guarded = ['id'];
 
+
+public function user()
+{
+    return $this->belongsTo(User::class, 'user_id', 'id');
+}
+
+
+public function task()
+{
+    return $this->belongsTo(User::class, 'task_id', 'id');
+}
+
     }
+
+
